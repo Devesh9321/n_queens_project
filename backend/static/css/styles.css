@@ -1,0 +1,67 @@
+*,
+:before,
+:after {
+    margin: 0;
+    padding: 0;
+}
+
+/**/
+:root {
+    /* Colors of the Page*/
+    --caret-color: #f0d9b5;
+    --dark-color: #b58863;
+    
+    /* size of the Page*/
+    --box-size: 30px;
+    --border-left:10px;
+    --border-right:10px;
+}
+
+
+body {
+    padding: 10px;
+}
+
+/* Chessboard styling */
+.chess {
+    padding: 20px;
+    /* border: 3px solid #000; */
+}
+
+.chess__wrapper {
+    position: relative; 
+    border: 3px solid #000;
+    width: fit-content;
+}
+
+.chess__board-row {
+    display: flex;
+    width: fit-content;
+}
+
+.chess__board-element {
+    background-color: var(--dark-color);
+}
+
+.chess__board-row:nth-of-type(2n) .chess__board-element:nth-of-type(2n),
+.chess__board-row:nth-of-type(2n+1) .chess__board-element:nth-of-type(2n+1) {
+    background-color: var(--caret-color);
+}
+
+.chess__board-element {
+    width: var(--box-size);
+}
+
+.chess__board-element-wrapper {
+    padding-top: 100%;
+}
+#queen{
+    background-color: var(--dark-color);
+    width: fit-content;
+    padding: 1px;
+}
+#queen img{
+    width: var(--box-size);
+    height: var(--box-size);
+
+}
