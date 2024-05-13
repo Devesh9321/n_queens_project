@@ -5,16 +5,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>N Queens Visualization</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
 </head>
 
 <body>
-    <h1>N Queens Visualization</h1>
+    <header>
+        <div class="px-3 py-2 text-bg-dark border-bottom">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
-    <div class="container mt-auto">
-        <div id="queen"><img src="/static/svg/queen.svg" ></div>
+                    <a href="/"
+                        class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
+                        <svg class="bi bg-danger me-2 p-1" width="40" height="32" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512">
+                            <path
+                                d="M256 112a56 56 0 1 0 -56-56 56 56 0 0 0 56 56zm176 336H80a16 16 0 0 0 -16 16v32a16 16 0 0 0 16 16h352a16 16 0 0 0 16-16v-32a16 16 0 0 0 -16-16zm72.9-263.8l-28.5-15.9c-7.4-5-16.9-2.5-22.3 4.7a47.6 47.6 0 0 1 -47.2 18.2C383.7 186.9 368 164.9 368 141.4a13.4 13.4 0 0 0 -13.4-13.4h-38.8c-6 0-11.6 4-12.9 9.9a48 48 0 0 1 -93.9 0c-1.3-5.9-6.8-9.9-12.9-9.9H157.4a13.4 13.4 0 0 0 -13.4 13.4c0 25.7-19 48.8-44.7 50.5a47.5 47.5 0 0 1 -41.5-19.2c-5.3-7.1-14.7-9.5-22.1-4.5l-28.6 16a16 16 0 0 0 -5.4 20.5L104.2 416h303.5l102.6-211.4a16 16 0 0 0 -5.4-20.5z" />
+                        </svg>
 
+                        <span class="fs-4 text-white">N Queens Visualization</span>
+                    </a>
+
+
+
+                    <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                    <i class="fas fa-check-square"></i>
+                                </svg>
+                                Solution
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                    <i class="fas fa-hard-hat"></i>
+                                </svg>
+                                Complexity Analysis
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                    <i class="fas fa-tree"></i>
+                                </svg>
+                                Recurssion Tree
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="contianer">
+        <!-- <form id="quicksolve" class="form-signin" method="post" action="{{ url_for('get_solutions') }}"> -->
+        <form id="quicksolve" class="form-signin" method="post">
+            <div class="row">
+                <div class="text-center mb-4">
+                    <h1 class="h3 mb-3 font-weight-normal">Get the Solution</h1>
+                    <p>N Queen's Problem can be a great way to explore various algorithms and techniques for solving it
+                        efficiently.
+                        <code>Max number you can use is 10</code>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-label-group">
+                        <input type="number" name="inputQueen" id="inputQueen" class="form-control"
+                            placeholder="Enter N" required autofocus>
+                        <label for="inputQueen">Enter N</label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Go a Head</button>
+                </div>
+            </div>
+        </form>
     </div>
 
 
@@ -25,6 +97,48 @@
         </div>
     </div>
 
+    <div class="container">
+        <div class="container px-4 py-5" id="featured-3">
+            <h2 class="pb-2 border-bottom">Complexity Analysis</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                <div class="feature col">
+                    <div
+                        class="feature-icon d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
+                        <i class="fas fa-stopwatch"></i>
+                    </div>
+                    <h3 class="fs-2 text-body-emphasis">Time Complexity</h3>
+                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
+                        sentence and probably just keep going until we run out of words.</p>
+                </div>
+                <div class="feature col">
+                    <div
+                        class="feature-icon d-inline-flex align-items-center justify-content-center justify-content-evenly bg-gradient fs-2 mb-3">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="fs-2 text-body-emphasis">Space Complexity</h3>
+                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
+                        sentence and probably just keep going until we run out of words.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container">
+        <div class="px-4 py-5 my-5 text-center">
+            <h1 class="display-5 fw-bold text-body-emphasis">Basic Recurssion Tree</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the
+                    world’s most popular front-end open source toolkit, Sass variables and mixins, responsive grid
+                    system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+            </div>
+        </div>
+
+        <div id="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
 
 
     <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
@@ -32,9 +146,75 @@
     <script src="{{ url_for('static', filename='js/babylon.js') }}"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <script>
-        // Call the functions to create and animate the chessboard
-        createChessboard();
-        animateChessboard();
+        // Get the solution from the Server
+        document.getElementById("quicksolve").addEventListener("submit", function (event) {
+            // Prevent the default form submission
+            event.preventDefault();
+
+            // Get the input value
+            var inputValue = document.getElementById('inputQueen').value;
+
+            // Validate the input
+            if (validateInput(inputValue)) {
+                // If input is valid, submit the form
+                // var formData = new FormData();
+                // formData.append("inputQueen", inputValue);
+                fetch("{{url_for('get_solutions')}}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    // document.getElementById("quicksolve").submit()
+                    body: JSON.stringify({ "inputQueen": inputValue })
+                }).then(response => {
+                    // Check if the response is OK
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    // Parse the JSON response
+                    return response.json();
+                })
+                    .then(data => {
+                        // Handle the JSON data
+                        document.querySelector('.chess__wrapper').innerHTML = "";
+                        console.log('Solutions:', data.solutions);
+                        data.solutions.forEach(function (solution, index) {
+                            console.log("Solution " + (index + 1) + ":");
+                            createChessboard(inputValue, index)
+                            animateChessboard()
+                            solution.forEach(function (coord) {
+                                console.log("(" + coord[0] + ", " + coord[1] + ")");
+                                moveQueenToPosition(index + '-' + coord[1] + '-' + coord[0]);
+                            });
+                        });
+
+                        // Do whatever you want with the solutions here
+                    })
+                    .catch(error => {
+                        // Handle any errors
+                        console.error('Error fetching solutions:', error);
+                    });
+            } else {
+                // If input is not valid, notify the user or take appropriate action
+                alert("Please enter a valid number less than 100.");
+            }
+        });
+
+        //  Build the Recursion tree
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        const nodeRadius = 20;
+        const childCount = 5;
+        const childDistance = childCount * 30;
+        const treeWidth = (childCount - 1) * childDistance;
+        const treeHeight = childDistance * 2;
+
+        canvas.width = treeWidth + nodeRadius * 2; // Set canvas width to accommodate the tree
+        canvas.height = treeHeight + nodeRadius * 2; // Set canvas height to accommodate the tree
+
+        drawTree();
+
+
     </script>
 </body>
 

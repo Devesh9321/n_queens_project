@@ -10,17 +10,110 @@
     /* Colors of the Page*/
     --caret-color: #f0d9b5;
     --dark-color: #b58863;
-    
+
     /* size of the Page*/
     --box-size: 30px;
-    --border-left:10px;
-    --border-right:10px;
-}
+    --border-left: 10px;
+    --border-right: 10px;
+    --input-padding-x: .75rem;
+    --input-padding-y: .75rem;
 
+}
 
 body {
     padding: 10px;
 }
+
+/* navigation Bar */
+.form-control-dark {
+    border-color: var(--bs-gray);
+}
+
+.form-control-dark:focus {
+    border-color: #fff;
+    box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+}
+
+.text-small {
+    font-size: 85%;
+}
+
+.dropdown-toggle:not(:focus) {
+    outline: 0;
+}
+
+/* Input Form */
+
+.form-signin {
+    width: 100%;
+    max-width: 420px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.form-label-group>input,
+.form-label-group>label {
+    padding: var(--input-padding-y) var(--input-padding-x);
+}
+
+.form-label-group>label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    /* Override default `<label>` margin */
+    line-height: 1.5;
+    color: #495057;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+    color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+    color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+    color: transparent;
+}
+
+.form-label-group input::placeholder {
+    color: transparent;
+}
+
+.form-label-group input::-webkit-outer-spin-button,
+.form-label-group input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+    padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+    padding-bottom: calc(var(--input-padding-y) / 3);
+}
+
+.form-label-group input:not(:placeholder-shown)~label {
+    padding-top: calc(var(--input-padding-y) / 3);
+    padding-bottom: calc(var(--input-padding-y) / 3);
+    font-size: 12px;
+    color: #777;
+}
+
 
 /* Chessboard styling */
 .chess {
@@ -29,9 +122,17 @@ body {
 }
 
 .chess__wrapper {
-    position: relative; 
+    position: relative;
     border: 3px solid #000;
     width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.chess__board {
+    border: 2px solid greenyellow;
+    margin: 5px;
 }
 
 .chess__board-row {
@@ -50,18 +151,26 @@ body {
 
 .chess__board-element {
     width: var(--box-size);
+    opacity: 1;
+    transform: translateY(0px);
 }
 
 .chess__board-element-wrapper {
     padding-top: 100%;
 }
-#queen{
-    background-color: var(--dark-color);
+.queen {
     width: fit-content;
-    padding: 1px;
-}
-#queen img{
-    width: var(--box-size);
     height: var(--box-size);
-
+    margin-left: 20%;
 }
+
+/* Recurssion Tree Template */
+#canvas-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
