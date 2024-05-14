@@ -25,7 +25,7 @@ This is a simple web application that allows you to solve the N-Queens problem. 
 
 ## Files
 
-- `app.py`: Flask application file containing route definitions.
+- `run.py`: Flask application file containing route definitions.
 - `templates/index.html`: HTML template file containing the form for inputting N.
 - `static/script.js`: JavaScript file containing the client-side code for form submission and handling responses.
 
